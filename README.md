@@ -11,3 +11,5 @@
 # Notice
 
 If you host this online change the MySQL password to something more secure then 'password'.
+
+![Screenshot of project](media/screenshot.png)
