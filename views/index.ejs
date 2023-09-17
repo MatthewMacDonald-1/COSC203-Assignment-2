@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <%- include('partials/common-head-meta') %>
+    <script src="/assets/js/item-data-manager.js" defer></script>
+</head>
+<body onscroll="headerResize(),checkHeight()" onload="checkHeight()"> 
+    <%- include('partials/header') %>
+    <div id="main_content">
+        <%- include('partials/mobile_control_panel.ejs', { filter: true, homeLink: false }) %><%- include('partials/controls.ejs', { filter: true, data: filterData, homeLink: false }) %><div class="item_pane_cont">
+            <div id="item_pane">
+                <% for (let i = 0; i < birds.length; i++) { %>
+                    <%- include('partials/bird', { bird: birds[i] }) %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

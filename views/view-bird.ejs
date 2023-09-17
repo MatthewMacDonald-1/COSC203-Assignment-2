@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <%- include('partials/common-head-meta') %>
+</head>
+<body onscroll="headerResize(),checkHeight()" onload="checkHeight()"> 
+    <%- include('partials/header') %>
+    <div id="main_content" class="view_bird">
+        <%- include('partials/mobile_control_panel.ejs', { filter: false, homeLink: true }) %><%- include('partials/controls.ejs', { filter: false, homeLink: true }) %><div class="item_pane_cont">
+            <div id="item_pane">
+            <%- include('partials/bird', { bird: bird, id: bird_id }) %>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

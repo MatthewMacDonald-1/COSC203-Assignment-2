@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <%- include('partials/common-head-meta') %>
+    <script src="/assets/js/upload-image-preview.js" defer></script>
+</head>
+<body onscroll="headerResize(),checkHeight()" onload="checkHeight()"> 
+    <%- include('partials/header') %>
+    <div id="main_content">
+        <%- include('partials/mobile_control_panel.ejs', { filter: false, homeLink: true }) %><%- include('partials/controls.ejs', { filter: false, homeLink: true }) %><div class="item_pane_cont">
+            <div id="item_pane">
+                <form action="/birds/edit" method="POST" enctype="multipart/form-data" class="edit_form">
+                    <input type="hidden" name="bird_id" value="<%= bird_id %>">
+                
+                    <fieldset>
+                        <legend>Common Names</legend>
+                        <label for="primary_name">Primary Name</label>
+                        <input type="text" name="primary_name" value="<%= bird.primary_name %>" required>
+                
+                        <label for="english_name">English Name</label>
+                        <input type="text" name="english_name" value="<%= bird.english_name %>" required>
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Taxonomy</legend>
+                        <label for="scientific_name">Scientific Name</label>
+                        <input type="text" name="scientific_name" value="<%= bird.scientific_name %>" required>
+                
+                        <label for="order_name">Order</label>
+                        <input type="text" name="order_name" value="<%= bird.order_name %>" required>
+                
+                        <label for="family">Family</label>
+                        <input type="text" name="family" value="<%= bird.family %>" required>
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Size</legend>
+                        <label for="length">Length (cm)</label>
+                        <input type="number" name="length" value="<%= bird.length %>">
+                
+                        <label for="weight">Weight (g)</label>
+                        <input type="number" name="weight" value="<%= bird.weight %>">
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Conservation</legend>
+                        <label for="status_name">Status</label>
+                        <select name="status_name" id="status">
+                            
+                                <option >Not Threatened</option>
+                            
+                                <option >Naturally Uncommon</option>
+                            
+                                <option >Relict</option>
+                            
+                                <option >Recovering</option>
+                            
+                                <option >Declining</option>
+                            
+                                <option >Nationally Increasing</option>
+                            
+                                <option >Nationally Vulnerable</option>
+                            
+                                <option >Nationally Endangered</option>
+                            
+                                <option >Nationally Critical</option>
+
+                                <option>Extinct</option>
+                            
+                                <option >Data Deficient</option>
+                            
+                        </select>
+                    </fieldset>
+                
+                    <fieldset>
+                        <legend>Photo</legend>
+                        <label for="photographer">Photo Credit</label>
+                        <input type="text" name="photographer" value="<%= bird.photographer %>" required>
+                
+                        <label for="photo_upload">Upload New Photo</label>
+                        <input type="file" name="photo_upload" id="photo_upload">
+                
+                        <label for="photo_source">Photo Preview</label>
+                        <% let imageSource = bird.filename %>
+                        <% if (imageSource == null) { %>
+                            <% imageSource = 'no-image.png' %>
+                        <% } %>
+                        <img id="upload_preview" src="/images/<%= imageSource %>" alt="Photo of <%= bird.primary_name %>">
+                        <input id="upload_source" type="text" name="photo_source" value="<%= bird.filename %>" readonly="readonly">
+                    </fieldset>
+                
+                    <button class="button" type="submit">Save Bird</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <%- include('partials/footer') %>
+</body>
+</html>

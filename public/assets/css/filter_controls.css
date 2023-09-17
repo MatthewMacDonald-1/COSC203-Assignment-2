@@ -1,0 +1,93 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+:root {
+    --main-bg-color: #ffffff;
+    --main-text-color: #000000;
+
+    --accent-bg-color: #0073a8;
+    --accent-text-color: #ffffff;
+
+    /* Conservation status colors */
+    --csc-not-threatened: #02a028;
+    --csc-naturally-uncommon: #649a31;
+    --csc-relict: #99cb68;
+    --csc-recovering: #fecc33;
+    --csc-declining: #fe9a01;
+    --csc-nationally-increasing: #c26967;
+    --csc-nationally-vulnerable: #9b0000;
+    --csc-nationally-endangered: #660032;
+    --csc-nationally-critical: #320033;
+    --csc-extinct: #000000;
+    --csc-data-deficient: #000000;
+}
+
+
+#controls_form label.header {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+#controls_form label {
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 5px auto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+}
+
+#controls_form select, #controls_form input {
+    width: 20em;
+    margin: auto;
+    display: block;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    border-style: solid;
+    border-color: #cecece;
+    border-width: 1.5px;
+}
+
+#controls_form input {
+    width: 19.2em;
+}
+
+#controls_form select {
+    text-align: center;
+}
+
+#controls_form .section {
+    display: block;
+    margin: 10px auto;
+}
+
+#controls_form button, #controls_form .link_button {
+    display: block;
+    margin: 20px auto;
+    border: none;
+    background-color: var(--accent-bg-color);
+    color: var(--accent-text-color);
+    padding: 7px 10px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 0 0 grey;
+    width: fit-content;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13.33333px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#controls_form button:hover, #controls_form .link_button:hover {
+    filter: saturate(150%);
+}
+
+#controls_form button:active, #controls_form .link_button:active {
+    box-shadow: 0 0 0 0 grey;
+}
+
+#controls_form hr {
+    width: 19em;
+    border-style: solid;
+    border-color: #cecece;
+}

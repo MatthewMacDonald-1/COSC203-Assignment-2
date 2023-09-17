@@ -1,0 +1,72 @@
+<div id="controls" class="vis_disabled">
+    <form id="controls_form">
+        <% if (filter) { %>
+        <div class="section">
+            <label class="header">Search</label>
+            <input type="text" placeholder="Search" id="text_search_all_fields">
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <label class="header">Filter By</label>
+
+            <label>Family</label>
+            <select id="filter_family">
+                <option selected>All</option> <!-- Default Option -->
+                <% for( let i = 0; i < data.familys.length; i++ ) { %>
+                    <option><%= data.familys[i] %></option>
+                <% } %>
+            </select>
+
+            <label>Order</label>
+            <select id="filter_order">
+                <option>All</option> <!-- Default Option -->
+                <% for( let i = 0; i < data.orders.length; i++ ) { %>
+                    <option><%= data.orders[i] %></option>
+                <% } %>
+            </select>
+
+            <label>Conservation Status</label>
+            <select id="filter_consStatus">
+                <option selected>All</option> <!-- Default Option -->
+                <% for( let i = 0; i < data.ConservationStatus.length; i++ ) { %>
+                    <option><%= data.ConservationStatus[i].status_name %></option>
+                <% } %>
+            </select>
+        </div>
+
+        <hr>
+
+        <div class="section">
+            <label class="header">Sort By</label>
+            <select id="sort_byFeild">
+                <!-- <option></option> Blank Option -->
+                <option value="0" selected>Maori Name Ascending</option>
+                <option value="1">Maori Name Descending</option>
+                <option value="2">English Name Ascending</option>
+                <option value="3">English Name Descending</option>
+                <option value="4">Scientific Name Ascending</option>
+                <option value="5">Scientific Name Descending</option>
+                <option value="6">Order Ascending</option>
+                <option value="7">Order Descending</option>
+                <option value="8">Family Ascending</option>
+                <option value="9">Family Descending</option>
+                <option value="10">Conservation Status Severity Ascending</option>
+                <option value="11">Conservation Status Severity Descending</option>
+                <option value="12">Length Ascending</option>
+                <option value="13">Length Descending</option>
+                <option value="14">Weight Ascending</option>
+                <option value="15">Weight Descending</option>
+            </select>
+        </div>
+
+        <button id="filter_results_btn">Filter Results</button>
+        <button id="clear_all_fields_btn">Clear All Fields</button>
+        <% } %>
+        <% if (homeLink) { %>
+        <a class="link_button" href="/">Home</a>
+        <% } %>
+        <a class="link_button" href="/birds/create">Create New Bird</a>
+    </form>
+</div>

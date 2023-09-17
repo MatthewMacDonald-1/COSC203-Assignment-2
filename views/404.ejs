@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title><%= title %></title>
+    <%- include('partials/common-head-meta') %>
+</head>
+<body onscroll="headerResize(),checkHeight()" onload="checkHeight()"> 
+    <%- include('partials/header') %>
+    
+    <div id="main_content">
+        <h1 style="text-align: center;"><%= title %></h1>
+
+        <a href="/" style="display: block; text-align: center;
+        padding: 8px 12px; margin: auto; width: fit-content;border-radius: 5px;background-color: #0073a8;color: #ffffff;text-decoration: none;">Home</a>
+    </div>
+
+    <%- include('partials/footer') %>
+</body>
+</html>

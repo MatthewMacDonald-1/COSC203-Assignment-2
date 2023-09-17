@@ -1,0 +1,53 @@
+<div id="mobile_control_panel">
+    <% if (filter) { %>
+    <span class="pop_out_btn">
+        <span id="animated_arrow" class="">❯</span>
+    </span>
+    <% } %>
+
+    <% if (homeLink) { %>
+    <a class="link_btn" href="/" title="Home">
+        <span class="">H</span>
+    </a>
+    <% } %>
+
+    <a class="link_btn" href="/birds/create" title="Create new bird">
+        <span class="">+</span>
+    </a>
+
+    <table class="cons_status_key" id="cons_status_key_el">
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_not_threatened-bg"></span></span>
+        </td><td>Not Threatened</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_naturally_uncommon-bg"></span></span>
+        </td><td>Naturally Uncommon</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_relict-bg"></span></span>
+        </td><td>Relict</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_recovering-bg"></span></span>
+        </td><td>Recovering</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_declining-bg"></span></span>
+        </td><td>Declining</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_nationally_increasing-bg"></span></span>
+        </td><td>Nationally Increasing</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_nationally_vulnerable-bg"></span></span>
+        </td><td>Nationally Vulnerable</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_nationally_endangered-bg"></span></span>
+        </td><td>Nationally Endangered</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_nationally_critical-bg"></span></span>
+        </td><td>Nationally Critical</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_extinct-bg"></span></span>
+        </td><td>Extinct</td></tr>
+        <tr><td>
+            <span class="dot_over"><span class="color_id csc_data_deficient-bg"></span></span>
+        </td><td>Data Deficient</td></tr>
+    </table>
+</div>
